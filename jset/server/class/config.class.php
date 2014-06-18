@@ -18,7 +18,7 @@ class config
 	const dbcharset = 'utf8';
 	const dbname = 'waterproof';
 	const dbuser   = 'root';
-	const dbpassword = 'earth12'; 
+	const dbpassword = ''; 
 	
 	const dbfetchStyle = PDO::FETCH_OBJ;
 	const dberrorMode = PDO::ERRMODE_EXCEPTION;
@@ -26,6 +26,12 @@ class config
 	const limit = 100;
 	const upload_directory = '../../uploads/';
 	const hosts_table = 'jset_host';
+	
+	const login = false;
+	const login_page = 'login.php';
+	const start_page = 'index.php';
+	const user_table = 'jset_user';
+	const encrypt_salt = 'abba';
 	
 	const mysqldump_prefix = '';
 	const errorLogFile = 'log/error_log_file.txt';
