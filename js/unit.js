@@ -33,7 +33,7 @@ $.jset.fn.registerGridDefinition('unit', {
     grid: {
 	    sortname: 'name',
 	    sortorder: 'asc',
-    	width: 460,
+    	autowidth: true,
     	height: 300
   	},
   	navigation:{
