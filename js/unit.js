@@ -31,10 +31,11 @@ $.jset.fn.registerGridDefinition('unit', {
 		return [false, message];
 	},*/
     grid: {
+    	direction: 'rtl',
 	    sortname: 'name',
 	    sortorder: 'asc',
     	autowidth: true,
-    	height: $(window).height() - 95
+    	height: $(window).height() - 140
     	
   	},
   	navigation:{
