@@ -35,6 +35,7 @@ $.jset.fn.registerGridDefinition('unit', {
 	    sortorder: 'asc',
     	autowidth: true,
     	height: $(window).height() - 95
+    	
   	},
   	navigation:{
 		options : {
