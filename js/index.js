@@ -164,6 +164,7 @@ $(function(){
 	//$("#tabs").width('98%');
 	$("#tabs").bind("tabsshow", function(event, ui){
 		var unit = $('table[id="unit"]');
+		var reading_register = $('table[id="reading_register"]');
 		var report = $('table[id="report"]');
 		//switch(ui.index)
 		switch($(ui.panel).attr('id'))
@@ -177,6 +178,14 @@ $(function(){
 			break;
 
 			case 'tabs-2':
+				if(!reading_register.jset('defined'))
+					reading_register.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('reading_register')));
+				else
+					if(reading_register.data('pending_reload'))
+						reading_register.jset('reload', [true]);
+			break;
+
+			case 'tabs-9':
 				if(!report.jset('defined'))
 					report.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('report')));
 			break;

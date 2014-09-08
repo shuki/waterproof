@@ -56,5 +56,5 @@ $.jset.fn.registerGridDefinition('unit', {
 	}
 });
 
-$('#unit').jset($.extend(true, {}, $.jset.fn.getGridDefinition('unit'), $.jset.fn.url_filters()));
+// $('#unit').jset($.extend(true, {}, $.jset.fn.getGridDefinition('unit'), $.jset.fn.url_filters()));
 });

@@ -20,6 +20,7 @@
 	<?php echo jset_permission::get_user_attributes_js(); ?>
 </script>
 <script src="js/unit.js" type="text/javascript"></script>
+<script src="js/reading_register.js" type="text/javascript"></script>
 <script src="js/report.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
 </head>
@@ -35,12 +36,16 @@
 	<div id="tabs">
 		<ul>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-1">יחידות</a></li><?php } ?>
-			<?php if($user_group != 1){ ?><li><a href="#tabs-2">דוחות</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-2">קריאות</a></li><?php } ?>
+			<?php if($user_group != 1){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 		</ul>
 		<div id="tabs-1">
 			<table id="unit" border="1"></table>
 		</div>
 		<div id="tabs-2">
+			<table id="reading_register" border="1"></table>
+		</div>
+		<div id="tabs-9">
 			<table id="report" border="1"></table>
 		</div>
 	</div>
