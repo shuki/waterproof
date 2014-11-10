@@ -43,7 +43,19 @@
 			<table id="unit" border="1"></table>
 		</div>
 		<div id="tabs-2">
-			<table id="reading_register" border="1"></table>
+			<table id="reading_master_table" style="width:98%">
+				<tr>
+					<td style="vertical-align:top">
+						<table id="reading_register" border="1"></table>
+					</td>
+				</tr>
+				<tr><td></td></tr>
+				<tr>	
+					<td style="vertical-align:top">
+						<table id="reading_item" border="1"></table>
+					</td>
+				</tr>
+			</table>
 		</div>
 		<div id="tabs-9">
 			<table id="report" border="1"></table>

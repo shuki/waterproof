@@ -132,13 +132,20 @@ $(function(){
 	$("#tabs").tabs();
 	$("#tabs").height($('.ui-tabs-nav:first', $("#tabs")).height());
 
+	panel = $($('#panel_template').html()).appendTo($('div#tabs-2'))
+		.css({width:614, float:'right'})
+		.addClass('rtl');
+	$('span.panel-title', panel).html('קריאות');
+	table = $('table[id="reading_master_table"]').appendTo($('div.panel-body', panel));
+	
+	set_panel_img_on_click_handler('div#tabs-2');
+
 	$(window).bind('beforeunload', function(e){
 		var message = 'נתונים השתנו! האם ברצונך לעזוב את הדף ללא שמירה?',
 		stay = false,
 		e = e || window.event,
 		activeTab = $("#tabs").tabs( "option", "active");
-		
-		
+	
 		stay = fn_tamir.closeFromsInTab($('div[id="tabs"] ul .ui-tabs-active a'), activeTab);		
 		if(stay){
 			// For IE and Firefox
