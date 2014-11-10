@@ -39,7 +39,7 @@ class config
 	const password_reset = '1234';
 
 	const mysqldump_prefix = '';
-	const errorLogFile = '../log/error_log_file.txt';
+	const errorLogFile = 'log/error_log_file.txt';
 
 	const export_limit = 150;
 	const no_export_limit = 1000000;	
