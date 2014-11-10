@@ -37,7 +37,7 @@
 		<ul>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-1">יחידות</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-2">קריאות</a></li><?php } ?>
-			<?php if($user_group != 1){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 		</ul>
 		<div id="tabs-1">
 			<table id="unit" border="1"></table>

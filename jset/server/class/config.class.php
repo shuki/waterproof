@@ -27,13 +27,13 @@ class config
 	const upload_directory = '../../uploads/';
 	const hosts_table = 'jset_host';
 	
-	const login = false;
+	const login = true;
 	const session = 'waterproof';
 	const login_page = 'login.php';
 	const start_page = 'index.php';
 	const password_page = 'password.php';
-	const user_table = 'jset_user';
-	const encrypt_salt = 'abba';
+	const user_table = 'worker';
+	const encrypt_salt = 't2H3';
 	const password_reset = '1234';
 
 	const mysqldump_prefix = '';
