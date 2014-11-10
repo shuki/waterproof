@@ -10,6 +10,7 @@
 
 class config
 {
+	const version = '1.0.0';
 	const jxset = '../jxset/';
 	const rel_path = '../../';
 	const dbhost = '127.0.0.1';
@@ -22,9 +23,10 @@ class config
 	
 	const dbfetchStyle = PDO::FETCH_OBJ;
 	const dberrorMode = PDO::ERRMODE_EXCEPTION;
-	const dbtime_zone = '+03:00'; // 'SYSTEM'
+	//const dbtime_zone = '+03:00'; // 'SYSTEM'
 	const limit = 100;
 	const upload_directory = '../../uploads/';
+	const mysql_rel_path = '../../uploads/';
 	const hosts_table = 'jset_host';
 	
 	const login = true;
@@ -37,7 +39,7 @@ class config
 	const password_reset = '1234';
 
 	const mysqldump_prefix = '';
-	const errorLogFile = 'log/error_log_file.txt';
+	const errorLogFile = '../log/error_log_file.txt';
 
 	const export_limit = 150;
 	const no_export_limit = 1000000;	
