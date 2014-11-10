@@ -19,6 +19,7 @@
 <script type="text/javascript">
 	<?php echo jset_permission::get_user_attributes_js(); ?>
 </script>
+<script src="js/defaults.js" type="text/javascript"></script>
 <script src="js/unit.js" type="text/javascript"></script>
 <script src="js/reading_register.js" type="text/javascript"></script>
 <script src="js/report.js" type="text/javascript"></script>
