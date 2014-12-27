@@ -48,5 +48,7 @@ class config
 	const join_list_suffix = '_jxlist';
 	const join_field_suffix = '_jxfield';
 	
-	const dbname_default = 'waterproof';// for report
+	// for report
+	const dbname_default = 'waterproof';
+	const tpl = 'page.tpl';
 }
