@@ -43,6 +43,9 @@ class report {
 	}
 
 	private function get_page_data($params){
+		foreach($_SESSION as $key => $value)
+			$data->$key = $value;
+		
 		$res = $this->db->query(self::SQL_GET_REPORT, array($params['reportId']));
 		if(isset($res->error))
 			$this->error('unable to get report ' . $params['reportId'] . '.', $res->error); 
@@ -109,7 +112,7 @@ class report {
 		if($report->before_show)
 		{
 			$call = gen_utils::call_extract($report->before_show);
-			$res = call_user_func_array(array($call->class, $call->method), array($data));
+			$res = call_user_func_array(array($call->class, $call->method), array($this->db, $data));
 			if($res === false)
 				$this->error('unable to call the before show event - ', $report->before_show);
 			else 
@@ -264,9 +267,9 @@ class report {
 		//** un-comment the following line to show the debug console
 		//$smarty->debugging = true;
 		
-		//$message = $smarty->fetch("tpl/page_payment.tpl");
 		$smarty->assign('tpl_name', "tpl/" . ($data->report->tpl ? $data->report->tpl : "content_table") . ".tpl");
-		$message = $smarty->display("tpl/report.tpl");
+		//$message = $smarty->display("tpl/report.tpl");
+		$message = $smarty->display("tpl/" . (defined('config::tpl') ? config::tpl : "report.tpl"));
 	}
 
 	private function execute($db_name, $host, $sql, $error){
