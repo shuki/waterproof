@@ -117,6 +117,7 @@ $(function(){
 	    grid: {
 		    height: $(window).height() - 362,
     		width: 600,
+			cellEdit: true
     		//autowidth: true,
 	        //sortname: 'patient_fullname',
 	        //sortorder: 'asc'
