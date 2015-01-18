@@ -21,29 +21,36 @@
 </script>
 <script src="js/defaults.js" type="text/javascript"></script>
 <script src="js/unit.js" type="text/javascript"></script>
+<script src="js/accumulator.js" type="text/javascript"></script>
 <script src="js/reading_register.js" type="text/javascript"></script>
+<script src="js/misc.js" type="text/javascript"></script>
 <script src="js/report.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
 </head>
-<body dir="rtl">
+<body>
 	<div> <a href="login.php?signout"><img src="<?php echo $dir_pre ?>jset/img/out.png" title="צא"></a> <a href="<?php echo config::password_page; ?>"><?php echo $_SESSION['jset_user_login']; ?></a> שלום</div>
-	<?php //if(!$user_group){ ?>
+	<?php if(!$user_group){ ?>
 		
-		<!-- div style="direction:rtl; text-align:right">  יש להגדיר קבוצת הרשאה למשתמש <?php echo $_SESSION['jset_user_login']; ?> בכדי להשתמש במערכת. </div-->
+		<div style="direction:rtl; text-align:right">  יש להגדיר קבוצת הרשאה למשתמש <?php echo $_SESSION['jset_user_login']; ?> בכדי להשתמש במערכת. </div>
 
 	<?php 
-		//die;
-	//}	?>
+		die;
+	}	?>
 	<div id="tabs">
 		<ul>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-1">יחידות</a></li><?php } ?>
-			<?php if($user_group != 4){ ?><li><a href="#tabs-2">קריאות</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-2">מונים</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-3">קריאות</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-4">משתנים</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 		</ul>
 		<div id="tabs-1">
 			<table id="unit" border="1"></table>
 		</div>
 		<div id="tabs-2">
+			<table id="accumulator" border="1"></table>
+		</div>
+		<div id="tabs-3">
 			<table id="reading_master_table" style="width:98%">
 				<tr>
 					<td style="vertical-align:top">
@@ -57,6 +64,9 @@
 					</td>
 				</tr>
 			</table>
+		</div>
+		<div id="tabs-4">
+			<table id="misc" border="1"></table>
 		</div>
 		<div id="tabs-9">
 			<table id="report" border="1"></table>

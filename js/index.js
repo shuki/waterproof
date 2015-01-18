@@ -1,14 +1,15 @@
 $(function(){
+	$.jset.fn.sessionSetup();
 	$("#tabs").tabs();
 	$("#tabs").height($('.ui-tabs-nav:first', $("#tabs")).height());
 
-	panel = $($('#panel_template').html()).appendTo($('div#tabs-2'))
+	panel = $($('#panel_template').html()).appendTo($('div#tabs-3'))
 		.css({width:614, float:'right'})
 		.addClass('rtl');
 	$('span.panel-title', panel).html('קריאות');
 	table = $('table[id="reading_master_table"]').appendTo($('div.panel-body', panel));
 	
-	set_panel_img_on_click_handler('div#tabs-2');
+	set_panel_img_on_click_handler('div#tabs-3');
 
 	$(window).bind('beforeunload', function(e){
 		var message = 'נתונים השתנו! האם ברצונך לעזוב את הדף ללא שמירה?',
@@ -41,7 +42,9 @@ $(function(){
 	//$("#tabs").width('98%');
 	$("#tabs").bind("tabsshow", function(event, ui){
 		var unit = $('table[id="unit"]');
+		var accumulator = $('table[id="accumulator"]');
 		var reading_register = $('table[id="reading_register"]');
+		var misc = $('table[id="misc"]');
 		var report = $('table[id="report"]');
 		//switch(ui.index)
 		switch($(ui.panel).attr('id'))
@@ -55,11 +58,27 @@ $(function(){
 			break;
 
 			case 'tabs-2':
+				if(!accumulator.jset('defined'))
+					accumulator.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('accumulator')));
+				else
+					if(accumulator.data('pending_reload'))
+						accumulator.jset('reload', [true]);
+			break;
+
+			case 'tabs-3':
 				if(!reading_register.jset('defined'))
 					reading_register.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('reading_register')));
 				else
 					if(reading_register.data('pending_reload'))
 						reading_register.jset('reload', [true]);
+			break;
+
+			case 'tabs-4':
+				if(!misc.jset('defined'))
+					misc.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('misc')));
+				else
+					if(misc.data('pending_reload'))
+						misc.jset('reload', [true]);
 			break;
 
 			case 'tabs-9':

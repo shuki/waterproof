@@ -90,6 +90,10 @@ $(function(){
 			}
 		},
 		persist: false,
+		filterToolbar:{
+			hide: false,
+			navButtonAdd: false
+		},
 		clearPersist: {
 			navButtonAdd: false
 		},
@@ -122,8 +126,28 @@ $(function(){
 	    grid: {
 	    	direction: 'rtl',
 		    width: $(window).width() - 24,
-		    height: $(window).height() - 145,
-			rownumWidth: 30
-	  	}
+		    height: $(window).height() - 178,
+			rownumWidth: 30,
+			scroll:1
+	  	},
+	  	navigation:{
+			options : {
+				//del: user_attributes.group == 1,
+				search: false,
+				view: false
+			},
+			edit:{
+				checkOnUpdate:true
+			},
+			add:{
+				checkOnUpdate:true
+			},
+			del:{
+			},
+			search:{
+			},
+			view:{
+			}
+		}
 	});
 });
