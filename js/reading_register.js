@@ -46,7 +46,7 @@
     		width: 600,
 			cellEdit: true,
 	        sortname: 'units',
-	        sortorder: 'desc'
+	        sortorder: 'asc'
 	  	},
 	  	navigation:{
 			options : {

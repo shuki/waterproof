@@ -44,6 +44,7 @@ $(function(){
 		var unit = $('table[id="unit"]');
 		var accumulator = $('table[id="accumulator"]');
 		var reading_register = $('table[id="reading_register"]');
+		var summary = $('table[id="summary"]');
 		var misc = $('table[id="misc"]');
 		var report = $('table[id="report"]');
 		//switch(ui.index)
@@ -74,6 +75,14 @@ $(function(){
 			break;
 
 			case 'tabs-4':
+				if(!summary.jset('defined'))
+					summary.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('summary')));
+				else
+					if(summary.data('pending_reload'))
+						summary.jset('reload', [true]);
+			break;
+
+			case 'tabs-5':
 				if(!misc.jset('defined'))
 					misc.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('misc')));
 				else

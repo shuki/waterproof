@@ -6,9 +6,6 @@ $(function(){
 			use: true,
 			columns: 1
 		},
-		copy:{
-			navButtonAdd: false
-		},
 		help:{
 			hide: false,
 			navButtonAdd: true,
@@ -28,9 +25,20 @@ $(function(){
 			    }
 			);
 		},
+		afterSubmitError: function(response, postdata, frmoper, obj){
+			var message = obj.error.message;
+			switch(obj.error.info[1]){
+				case 1062: 
+					message = 'קיים כבר ערך למשתנה זה לתאריך זה.';
+					break;
+				default:
+					;
+			}
+			return [false, message];
+		},
 	    grid: {
-		    //sortname: 'name',
-		    //sortorder: 'desc',
+		    sortname: 'date_effective',
+		    sortorder: 'desc',
 		    height: $(window).height() - 150,
 		    width: 500
 	  	},

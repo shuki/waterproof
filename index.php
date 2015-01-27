@@ -23,6 +23,7 @@
 <script src="js/unit.js" type="text/javascript"></script>
 <script src="js/accumulator.js" type="text/javascript"></script>
 <script src="js/reading_register.js" type="text/javascript"></script>
+<script src="js/summary.js" type="text/javascript"></script>
 <script src="js/misc.js" type="text/javascript"></script>
 <script src="js/report.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
@@ -39,9 +40,10 @@
 	<div id="tabs">
 		<ul>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-1">יחידות</a></li><?php } ?>
-			<?php if($user_group != 4){ ?><li><a href="#tabs-2">מונים</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-3">קריאות</a></li><?php } ?>
-			<?php if($user_group != 4){ ?><li><a href="#tabs-4">משתנים</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><!--li><a href="#tabs-4">סיכומים</a></li--><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-5">משתנים</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-2">מונים</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 		</ul>
 		<div id="tabs-1">
@@ -66,6 +68,9 @@
 			</table>
 		</div>
 		<div id="tabs-4">
+			<table id="summary" border="1"></table>
+		</div>
+		<div id="tabs-5">
 			<table id="misc" border="1"></table>
 		</div>
 		<div id="tabs-9">
