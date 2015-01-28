@@ -39,6 +39,7 @@
 	}	?>
 	<div id="tabs">
 		<ul>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-0">בית</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-1">יחידות</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-3">קריאות</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><!--li><a href="#tabs-4">סיכומים</a></li--><?php } ?>
@@ -46,6 +47,12 @@
 			<?php if($user_group != 4){ ?><li><a href="#tabs-2">מונים</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 		</ul>
+		<div style="width:100%; margin-top:10px" id="tabs-0">
+			<div style="width:60%; margin: 0 auto;">
+				<h1 style="color:green;">מערכת קריאת מוני מים</h1>
+				<h2 style="color:blue;">קיבוץ חפץ חיים</h2>
+			</div>
+		</div>
 		<div id="tabs-1">
 			<table id="unit" border="1"></table>
 		</div>
