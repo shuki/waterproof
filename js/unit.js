@@ -13,7 +13,7 @@ $(function(){
 			return [true];
 		},
 	    grid: {
-		    sortname: 'id',
+		    sortname: 'name',
 		    sortorder: 'asc'
 	  	}
 	});
