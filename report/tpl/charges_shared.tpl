@@ -77,22 +77,16 @@
 
 {foreach from=$data key=k item=row}
 {*foreach from=$row key=k item=item*}
-<div class="dateblock">
+<!--div class="dateblock">
 {$aggregate[0]->now}
 <br>
 {$hebrew_now}
-</div>
+</div-->
 <p>
 	<br />
 	<br />
 	<br />
 	<br />
-</p>
-<p>לכבוד: 
-{$row->name}
-<br>
-<br />
-<br />
 </p>
 
 <p>
@@ -110,6 +104,14 @@
 			<td class="separator">
 			</td>
 			<td class="separator">
+			</td>
+		</tr>
+		<tr>
+			<td class="header">
+				שם
+			</td>
+			<td class="detail">
+				{$row->name}
 			</td>
 		</tr>
 		<tr>
