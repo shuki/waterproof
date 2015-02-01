@@ -4,6 +4,15 @@ $(function(){
 	  email: 'איימל לא תקין'
 	});
 		
+	$.extend(true, $.jset, {
+		session: {
+			params:{
+				timoutWarning: 15000000, // 250 minutes
+				timoutNow: 300000, // 5 minutes
+			}
+		}
+	});
+
 	$.extend(true, $.jset.defaults, {
 		editor:{
 			directionality : 'rtl',
@@ -12,8 +21,6 @@ $(function(){
 			//toolbar: 'fontselect fontsizeselect bold italic underline forecolor backcolor alignleft aligncenter alignright bullist numlist outdent indent blockquote removeformat',
 			toolbar: 'fontsizeselect bold italic underline forecolor backcolor alignleft aligncenter alignright bullist numlist outdent indent blockquote removeformat',
 			plugins : 'textcolor'
-
-
 		},
 		control:{
 			align: 'right',

@@ -47,11 +47,9 @@
 			<?php if($user_group != 4){ ?><li><a href="#tabs-2">מונים</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 		</ul>
-		<div style="width:100%; margin-top:10px" id="tabs-0">
-			<div style="width:60%; margin: 0 auto;">
-				<h1 style="color:green;">מערכת קריאת מוני מים</h1>
-				<h2 style="color:blue;">קיבוץ חפץ חיים</h2>
-			</div>
+		<div style="width:100%; margin-top:10px; text-align: center" id="tabs-0">
+			<h1 style="color:green;">מערכת קריאת מוני מים</h1>
+			<h2 style="color:blue;">קיבוץ חפץ חיים</h2>
 		</div>
 		<div id="tabs-1">
 			<table id="unit" border="1"></table>
