@@ -125,7 +125,7 @@ $(function(){
 		},
 		help:{
 			hide: false,
-			navButtonAdd: false,
+			navButtonAdd: true,
 			dialog: {
 				title: 'הסבר'
 			}
