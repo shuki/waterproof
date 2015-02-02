@@ -4,7 +4,7 @@ $(function(){
 	$("#tabs").height($('.ui-tabs-nav:first', $("#tabs")).height());
 
 	panel = $($('#panel_template').html()).appendTo($('div#tabs-3'))
-		.css({width:614, float:'right'})
+		.css({width:814, float:'right'})
 		.addClass('rtl');
 	$('span.panel-title', panel).html('קריאות');
 	table = $('table[id="reading_master_table"]').appendTo($('div.panel-body', panel));

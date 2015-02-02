@@ -43,7 +43,7 @@
 		},
 	    grid: {
 		    height: $(window).height() - 408,
-    		width: 600,
+    		width: 800,
 			cellEdit: true,
 	        sortname: 'units',
 	        sortorder: 'asc'
@@ -138,7 +138,7 @@
 		},
 	    grid: {
 	    	height: 100,
-    		width: 600,
+    		width: 700,
 	        sortname: 'date',
 	        sortorder: 'desc'
 	  	},
