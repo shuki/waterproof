@@ -42,7 +42,7 @@
 			return [false, message];
 		},
 	    grid: {
-		    height: $(window).height() - 408,
+		    height: $(window).height() - 378,
     		width: 800,
 			cellEdit: true,
 	        sortname: 'units',
@@ -138,7 +138,7 @@
 		},
 	    grid: {
 	    	height: 100,
-    		width: 700,
+    		width: 800,
 	        sortname: 'date',
 	        sortorder: 'desc'
 	  	},
