@@ -144,6 +144,16 @@
 				{$row->amount1}
 			</td>
 		</tr>
+{if $row->adjustment1}
+		<tr>
+			<td class="header">
+				קיזוז מונה 1
+			</td>
+			<td class="detail">
+				{$row->adjustment1}
+			</td>
+		</tr>
+{/if}
 		<tr>
 			<td class="header">
 				סה"כ שימוש מונה 1

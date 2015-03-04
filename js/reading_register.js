@@ -22,13 +22,34 @@
 		loadComplete: function(data){
 		},
 		onSelectCell: function(rowid, celname, value, iRow, iCol){
+			var grid = $(this);
+		},	   
+		beforeEditCell: function(rowid, celname, value, iRow, iCol){
+			var grid = $(this);
+			current_row = grid.jqGrid("getRowData", rowid);
 		},	   
 		afterSaveCell: function (rowid, cellname, value){
 			var grid = $(this);
-		    if (cellname === 'amount') {
-		        var last_amount = parseFloat(grid.jqGrid("getCell", rowid, 'last_amount'));
-		        grid.jqGrid("setCell", rowid, 'usage', parseFloat(value) - parseFloat(last_amount));
-		    }
+		    if(current_row.id == rowid){
+			    if (cellname === 'amount'){
+			        var adjustment = current_row.adjustment ? parseFloat(current_row.adjustment) : 0;
+			        grid.jqGrid("setCell", rowid, 'usage', parseFloat(value) - parseFloat(current_row.last_amount) - parseFloat(adjustment));
+			    }
+			    if (cellname === 'adjustment'){
+			        var adjustment = value ? parseFloat(value) : 0;
+			        grid.jqGrid("setCell", rowid, 'usage', parseFloat(current_row.amount) - parseFloat(current_row.last_amount) - adjustment);
+			    }
+			}
+			else{
+			    if (cellname === 'amount'){
+			        var adjustment = grid.jqGrid("getCell", rowid, 'adjustment') ? parseFloat(grid.jqGrid("getCell", rowid, 'adjustment')) : 0;
+			        grid.jqGrid("setCell", rowid, 'usage', parseFloat(value) - parseFloat(grid.jqGrid("getCell", rowid, 'last_amount')) - parseFloat(adjustment));
+			    }
+			    if (cellname === 'adjustment'){
+			        var adjustment = value ? parseFloat(value) : 0;
+			        grid.jqGrid("setCell", rowid, 'usage', parseFloat(grid.jqGrid("getCell", rowid, 'amount')) - parseFloat(grid.jqGrid("getCell", rowid, 'last_amount')) - adjustment);
+			    }
+			}
 		},
 		afterSubmitError: function(response, postdata, frmoper, obj){
 			var message = obj.error.message;
@@ -159,4 +180,6 @@
 			}
 		}
 	});
+	
+	var current_row;
 });
