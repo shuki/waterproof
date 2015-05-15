@@ -50,5 +50,5 @@ class config
 	
 	// for report
 	const dbname_default = 'waterproof';
-	const tpl = 'page.tpl';
+	//const tpl = 'page.tpl';
 }
