@@ -41,10 +41,10 @@
 		<ul>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-0">בית</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-1">יחידות</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-2">מונים</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-3">קריאות</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><!--li><a href="#tabs-4">סיכומים</a></li--><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-5">משתנים</a></li><?php } ?>
-			<?php if($user_group != 4){ ?><li><a href="#tabs-2">מונים</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 		</ul>
 		<div style="width:100%; margin-top:10px; text-align: center" id="tabs-0">

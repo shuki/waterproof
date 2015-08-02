@@ -12,4 +12,13 @@ class waterproof
 		select '$id', id
 		from accumulator");
 	}
+
+	public static function create_initial_reading($db, $id)
+	{
+		$db->query("select * from reading_register order by year desc, month desc limit 1");
+		if($row = $db->fetch())
+			return $db->insert("INSERT IGNORE INTO `reading` (`parent`, `accumulator`, `amount`)  values(?, ?, ?)", array($row->id, $id, 0));			
+		
+		return true;
+	}
 }
