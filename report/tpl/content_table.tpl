@@ -1,4 +1,5 @@
 <table class="data">
+<thead>
 <tr style="border: solid 1px black; border-collapse: collapse; padding: 4px;">
 
 {assign var="column_number" value="1"}
@@ -17,7 +18,7 @@
 	<th colspan="100" style="border: solid 1px black; border-collapse: collapse; padding: 4px; background-color: #dddddd;">No Data</th>
 {/foreach}
 </tr>
-
+</thead>
 {foreach from=$data key=k item=row}
 {foreach from=$row key=k item=item}
 {if isset($breakOnColumnName) && $breakOnColumnName == $k}
