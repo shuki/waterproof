@@ -9,6 +9,11 @@
 <title>{if $error}Error in report{else}{$title}{/if}</title>
 <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 <script src="../../jxset/jset/jquery/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script>
+	var var_report = {
+		autoRefreshSeconds: '{$report->autoRefreshSeconds}'
+	};
+</script>
 <script src="js/reporting.js" type="text/javascript"></script>
 </head>
 

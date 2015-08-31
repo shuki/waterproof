@@ -10,7 +10,7 @@ class waterproof
 		
 		return $db->insert("INSERT IGNORE INTO `reading` (`parent`, `accumulator`)
 		select '$id', id
-		from accumulator");
+		from accumulator where active = 1");
 	}
 
 	public static function create_initial_reading($db, $id)

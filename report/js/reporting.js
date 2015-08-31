@@ -58,11 +58,11 @@ $(function(){
 			fn.client_action(href);
 		},
 		autoRefresh: function(){
-			if($('#autoRefreshSeconds').val() > 0)
+			if(var_report.autoRefreshSeconds > 0)
 			{
 				setInterval(function(){
 					location.reload();
-				}, $('#autoRefreshSeconds').val() * 1000);
+				}, var_report.autoRefreshSeconds * 1000);
 			}
 		},
 		print: function(){
