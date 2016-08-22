@@ -30,26 +30,38 @@
 		},	   
 		afterSaveCell: function (rowid, cellname, value){
 			var grid = $(this);
-		    if(current_row.id == rowid){
-			    if (cellname === 'amount'){
-			        var adjustment = current_row.adjustment ? parseFloat(current_row.adjustment) : 0;
-			        grid.jqGrid("setCell", rowid, 'usage', parseFloat(value) - parseFloat(current_row.last_amount) - parseFloat(adjustment));
+			var last_amount = grid.jqGrid("getCell", rowid, 'last_amount') ? parseFloat(grid.jqGrid("getCell", rowid, 'last_amount')) : 0;
+			var final_amount = grid.jqGrid("getCell", rowid, 'final_amount') ? parseFloat(grid.jqGrid("getCell", rowid, 'final_amount')) : 0;
+			var initial_amount = grid.jqGrid("getCell", rowid, 'initial_amount') ? parseFloat(grid.jqGrid("getCell", rowid, 'initial_amount')) : 0;
+
+			if(current_row.id == rowid){			
+				if (cellname === 'amount'){
+			    	var amount = value;
+			    	var adjustment = current_row.adjustment ? parseFloat(current_row.adjustment) : 0;
 			    }
 			    if (cellname === 'adjustment'){
-			        var adjustment = value ? parseFloat(value) : 0;
-			        grid.jqGrid("setCell", rowid, 'usage', parseFloat(current_row.amount) - parseFloat(current_row.last_amount) - adjustment);
+			    	var adjustment = value;
+			    	var amount = current_row.amount ? parseFloat(current_row.amount) : 0;
 			    }
 			}
-			else{
-			    if (cellname === 'amount'){
-			        var adjustment = grid.jqGrid("getCell", rowid, 'adjustment') ? parseFloat(grid.jqGrid("getCell", rowid, 'adjustment')) : 0;
-			        grid.jqGrid("setCell", rowid, 'usage', parseFloat(value) - parseFloat(grid.jqGrid("getCell", rowid, 'last_amount')) - parseFloat(adjustment));
+			else
+			{
+				if (cellname === 'amount'){
+			    	var amount = value;
+			    	var adjustment = grid.jqGrid("getCell", rowid, 'adjustment') ? parseFloat(grid.jqGrid("getCell", rowid, 'adjustment')) : 0;
 			    }
 			    if (cellname === 'adjustment'){
-			        var adjustment = value ? parseFloat(value) : 0;
-			        grid.jqGrid("setCell", rowid, 'usage', parseFloat(grid.jqGrid("getCell", rowid, 'amount')) - parseFloat(grid.jqGrid("getCell", rowid, 'last_amount')) - adjustment);
+			    	var adjustment = value;
+			    	var amount = grid.jqGrid("getCell", rowid, 'amount') ? parseFloat(grid.jqGrid("getCell", rowid, 'amount')) : 0;
 			    }
 			}
+
+		    if(final_amount > 0)
+		    	grid.jqGrid("setCell", rowid, 'usage', amount - initial_amount + final_amount - last_amount - adjustment);
+		    else
+		    	grid.jqGrid("setCell", rowid, 'usage', amount - last_amount - adjustment);
+
+			current_row = grid.jqGrid("getRowData", rowid);		    
 		},
 		afterSubmitError: function(response, postdata, frmoper, obj){
 			var message = obj.error.message;
