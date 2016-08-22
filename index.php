@@ -50,6 +50,7 @@
 		<div style="width:100%; margin-top:10px; text-align: center" id="tabs-0">
 			<h1 style="color:green;">מערכת קריאת מוני מים</h1>
 			<h2 style="color:blue;">קיבוץ חפץ חיים</h2>
+			<img src="<?php echo $dir_pre ?>jset/img/jxset.jpg"/>
 		</div>
 		<div id="tabs-1">
 			<table id="unit" border="1"></table>
