@@ -1,5 +1,6 @@
 <?php
 define('JSET_SERVER_CLASS_PATH', 'jset/server/class/');
+define('JSET_POOL_CLASS_PATH', '../jset_pool/class/');
 
 include_once(JSET_SERVER_CLASS_PATH . "config.class.php");
 ini_set("log_errors" , "1");
@@ -15,4 +16,6 @@ function __autoload($class_name) {
 		require_once JSET_SERVER_CLASS_PATH . $class_name . '.class.php';
 	else if (is_file(config::jxset . JSET_SERVER_CLASS_PATH . $class_name . '.class.php'))
 		require_once config::jxset . JSET_SERVER_CLASS_PATH . $class_name . '.class.php';
+	else if (is_file(JSET_POOL_CLASS_PATH . $class_name . '.class.php'))
+		require_once JSET_POOL_CLASS_PATH . $class_name . '.class.php';
 }
