@@ -3,6 +3,7 @@
 		source: 'reading',
 		item_name: 'קריאה',
 		row_selection: false,
+		autoRowNum: false,
 		persist: false,
 		filter:[{
 			source: 'id',
